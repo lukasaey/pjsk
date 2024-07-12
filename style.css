@@ -35,5 +35,15 @@
  }
 
  .checkbox {
-    transform: scale(1.75);
+     transform: scale(1.75);
+ }
+
+ .event-list>h2 {
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ .event-list>img {
+     vertical-align: middle;
+     padding: 0 6px;
  }
