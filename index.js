@@ -17,7 +17,7 @@ function openTab(event, tabName) {
 }
 
 function onSubmit(event) {
-  fetch("https://storage.googleapis.com/pjsk_bucket/events.json", {
+  fetch("http://pjsk_bucket.storage.googleapis.com/events.json", {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
