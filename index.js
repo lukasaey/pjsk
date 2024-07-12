@@ -17,8 +17,13 @@ function openTab(event, tabName) {
 }
 
 function onSubmit(event) {
-  fetch("events.json").then(async (events) => {
-    const json = await events.json()
-    console.log(json)
-  })
+  fetch("https://storage.googleapis.com/pjsk_bucket/events.json", {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    },
+  }).then(async (events) => {
+    const json = await events.json();
+    console.log(json);
+  });
 }
