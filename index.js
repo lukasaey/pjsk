@@ -17,13 +17,19 @@ function openTab(event, tabName) {
 }
 
 function onSubmit(event) {
-  fetch("https://storage.googleapis.com/pjsk_bucket/events.json", {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    },
-  }).then(async (events) => {
+  fetch("https://storage.googleapis.com/pjsk_bucket/events.json").then(async (events) => {
     const json = await events.json();
-    console.log(json);
+    // console.log(json);
+    const eventList = document.getElementById("eventlist");
+    for (const event of json) {
+      // console.log(event);
+      const div = document.createElement("div");
+      const h2 = document.createElement("h2");
+      h2.textContent = event.title;
+      div.append(h2)
+
+      eventList.append(div)
+    }
   });
 }
+[]
